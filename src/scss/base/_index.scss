@@ -1,0 +1,5 @@
+//Es necesario crear un "_index.scss" para importar con @use
+@forward 'variables'; //Este @forward apunta al archivo variables.
+@forward 'mixins';    //Este @forward apunta al archivo mixins.
+@forward 'normalize'; //Este @forward apunta al archivo normalize.
+@forward 'globales'; //Este @forward apunta al archivo globales.

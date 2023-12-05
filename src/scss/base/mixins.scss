@@ -1,0 +1,51 @@
+@use 'variables' as v;
+
+/* @mixin heading( $color : white, $border-radius : false) {
+    text-transform: uppercase;
+    font-size: 2.4rem;
+    color: $color;
+    letter-spacing: 1px;
+    background-color: black;
+
+    @if $border-radius {
+        border-radius: 100rem;
+        text-align: center;
+    }
+} */
+
+
+@mixin telefono {
+   @media(min-width : v.$telefono) {
+    @content; //Importante declarar @content en la creación de mixins como sustitución del código a establecer en los llamados de @includes
+   }
+}
+
+@mixin tablet {
+    @media(min-width : v.$tablet) {
+    @content;
+    }
+}
+
+@mixin desktop {
+    @media(min-width : v.$desktop) {
+    @content;
+    }
+}
+
+@mixin desktopXL {
+    @media(min-width : $desktopXL) {
+    @content;
+    }
+}
+
+@mixin grid($columnas, $espaciado) {
+    display: grid;
+    grid-template-columns: repeat($columnas, 1fr);
+    gap: $espaciado; 
+}
+
+@mixin resetear-lista {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}

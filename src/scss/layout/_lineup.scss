@@ -1,0 +1,72 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.lineup {
+    background-color: v.$rosa;
+    padding: 5rem 0;
+
+    h3, p {
+        text-align: center;
+        color: v.$blanco;
+    }
+    .dia {
+        text-transform: uppercase;
+        margin: 5rem 0;
+    }
+}
+
+.escenarios-contenedor {
+    @include m.tablet {
+        @include m.grid(2, 5rem);
+    }
+
+    p {
+        color: v.$negro;
+    }
+}
+
+.escenario {
+    padding-top: 2rem;
+    .nombre-escenario {
+        &:after {
+            content: '';  //Agrega un segundo contenedor para un elemento enseguida del elemento padre.
+            display: block; //Ocupa el espacio que necesita, posicionandose debajo del elemento padre.
+            width: 20rem;
+            height: 10rem;
+            background-size: 15rem;
+            background-repeat: no-repeat;
+            background-position: center center; //Posiciona la imagen al centro del contenedor horizontal y vertical.
+            margin: 2rem auto 0 auto;
+        }
+    }
+}
+.edm .nombre-escenario:after {
+    background-image: url(../img/icono_edm.png); //Los archivos compilados se están guardando en buil/css, hay que salir de css.
+}
+.rock .nombre-escenario:after {
+    background-image: url(../img/icono_rock.png);//Los archivos compilados se están guardando en buil/css, hay que salir de css.
+}
+
+.calendario {
+    @include m.resetear-lista;
+    li {
+        padding: 2.5rem;
+        font-weight: 700;
+        span {
+            font-weight: 400;
+        }
+    }
+}
+
+.bg-amarillo {
+    background-color: v.$amarillo;
+    li:nth-child(odd) {
+        background-color: darken(v.$amarillo, 15%); //darken propio de sass, toma 2 parámetros
+    }
+}
+.bg-verde {
+    background-color: v.$verde;
+    li:nth-child(odd) {
+        background-color: darken(v.$verde, 10%); //darken propio de sass, toma 2 parámetros
+    }
+}

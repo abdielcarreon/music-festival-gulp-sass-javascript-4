@@ -1,0 +1,48 @@
+//Posiciona contenido dentro del vídeo
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.video {
+    position: relative;
+    max-height: 70rem; //Overflow no funciona con height, tiene que tener max-height.
+    min-height: 50rem;
+    overflow: hidden; //Maneja el desbordamiento de contenido en un contenedor.
+
+    .overlay {
+        position: absolute;
+        background: rgb(126,2,195);
+        background: linear-gradient(270deg, rgba(126,2,195,0.5) 0%, rgba(255,0,110,0.3) 100%);
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column; //Alinear verticalmente
+        justify-content: center; //Alinear verticalmente
+    }
+
+    video {
+        width: auto;
+        display: block; //Para que el alto del video cubra toda la pantalla.
+        @include m.desktop {
+            width: 100%; //Para que el ancho del video cubra solamente el ancho de la pantalla.
+        }
+    }
+}
+
+
+.contenido-video {
+    z-index: 10 ;
+    h2 {
+        color: v.$blanco;
+        font-size: 7rem;
+        margin: 0;
+    }
+    p {
+        background-color: v.$rosa;
+        display: inline-block; //Abarca todo el ancho y evita se posicionen de lado derecho pero sólo toma el espacio requerido.
+        padding: 1rem 2rem;
+        color: v.$blanco;
+        font-weight: 700;
+        font-size: 2.4rem;
+        margin: 0;
+    }
+}

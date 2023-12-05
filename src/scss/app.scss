@@ -1,0 +1,9 @@
+//Importando e indicando para app.scss que hay un archivo variables que buscar con @import.
+//@import da acceso global a todos los archivos para poder hacer uso de las variables.
+/* @import 'base/variables'; */
+
+//Importando con @use para compilar todos los archivos dentro de la carpeta base.
+@use 'base';
+@use 'layout';
+
+ 

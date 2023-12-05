@@ -1,0 +1,64 @@
+
+@use 'variables' as v; //Llamando al archivo variables para poder hacer uso de su contenido - referenciandolo como "as v".
+
+html {
+    font-size: 62.5% ; //Simplica 1 rem = 10px
+    box-sizing: border-box; //Snippet de Paul Irish para igualar bordes del proyecto a 0.
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit; //Snippet para igualar el padding del proyecto a 0.
+}
+
+body {
+    font-size: v.$fuente_principal;
+    font-size: 1.6rem;
+
+    &.fijar-body {
+        overflow: hidden; //Elimina scroll en la ventana Modal => imagen grande (.overlay);
+    }
+    &.body-scroll {
+        padding-top: 8.6rem; //Misma medida de la barra "class=header fijo"
+        //Suaviza el salto de línea de la clase .body-scroll al llegar al contenedor-clase .sobre-festival.
+    }
+}
+
+p {
+    font-size: 2rem;
+    color: v.$negro;
+    line-height: 1.5;
+}
+
+.contenedor {
+    width: 95%;
+    max-width: 120rem;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1, h2, h3 {
+    margin: 0 0 5rem 0;
+}
+
+h1 {
+    font-size: 4rem;
+}
+h2 {
+    font-size: 3.6rem;
+}
+h3 {
+    font-size: 3rem;
+}
+
+img {
+    max-width: 100%;
+    width: 100%; //Ajuste de ancho para solucionar width y height en html.
+    height: auto; //Ajuste de alto para solucionar width y height en html.
+    display: block; //Ocupa todo el espacio disponible por defecto.
+}
+

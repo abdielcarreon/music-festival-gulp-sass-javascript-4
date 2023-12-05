@@ -1,0 +1,77 @@
+@use 'base/variables' as v; //Llamando al archivo variables para poder hacer uso de su contenido - referenciandolo como "as v".
+@use 'base/mixins' as m; //Llamando al archivo mixins para poder hacer uso de su contenido - referenciandolo como "as m".
+
+.header {
+    background-color: v.$verde;
+
+    @include m.tablet{
+        &.fijo { 
+            left: 0;
+            top: 0;
+            position: fixed;
+            width: 100%;
+            box-shadow: .1rem .2rem .1rem #333; //Eje x,eje y, blur y color.
+        }
+    }
+   
+
+    @include m.tablet {
+        &.fijo {
+            left: 0;
+            top: 0;
+            position: fixed;
+            width: 100%;
+            box-shadow: .1rem .2rem .3rem #333;
+        }
+    }
+
+    h1 {
+        color: v.$blanco;
+        text-align: center;
+        @include m.tablet {
+            margin: 0;
+        }
+        
+    }
+    .contenido-header {
+        padding: 2rem;
+        @include m.tablet {
+            display: flex;
+            justify-content:space-between;
+            align-items: center;
+        }
+    }
+    
+}
+
+.navegacion-principal {
+    @include m.tablet {
+        display: flex;
+        gap: 2rem;
+    }
+    a {
+        display: block;
+        text-align: center;
+        color: v.$blanco;
+        font-size: 2.4rem;
+        margin-bottom: 1rem;
+        @include m.tablet {
+            margin: 0;
+        }
+
+        &:hover {  //& Elimina el espacio de pseudoelementos en app.css
+            color: v.$amarillo;
+        }
+    }
+}
+
+/* .prueba {
+    @include m.heading(v.$amarillo, true) ////Llamando mixin con @includes en la clase prueba
+}
+
+.texto {
+    @include m.heading //Llamando mixin con @includes en la clase texto
+} */
+
+
+
